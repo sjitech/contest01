@@ -19,6 +19,5 @@ public class AnswerTest {
         Answer answer = new Answer();
 
         log.info("Max transport coal weight is : " + answer.resolve());
-
     }
 }
