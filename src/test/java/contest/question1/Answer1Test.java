@@ -9,14 +9,14 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by wang on 2015/04/07.
  */
-public class AnswerTest {
-    protected static Logger log = LoggerFactory.getLogger(AnswerTest.class);
+public class Answer1Test {
+    protected static Logger log = LoggerFactory.getLogger(Answer1Test.class);
 
     @Test
     public void testResolve() {
         log.info("start resolve {}", this.getClass().getName());
 
-        Answer answer = new Answer();
+        Answer1 answer = new Answer1();
 
         log.info("Max transport coal weight is : " + answer.resolve());
     }
