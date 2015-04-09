@@ -3,6 +3,10 @@ package contest.question2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * Created by wang on 2015/04/08.
  */
@@ -20,15 +24,77 @@ public class Answer {
 
         int[] result = new int[op1Len + op2Len];
 
-        int carry = 0;
-
-        for (int i = 0; i < op1Len; i++) {
-            for (int k = 0; k < op2Len; k++) {
-
-            }
+        // init result
+        for (int i = 0; i < op1Len + op2Len; i++) {
+            result[i] = -1;
         }
 
-        return null;
+        //log.debug("{} x {}", int2str(op1Num), int2str(op2Num));
+
+        int carry = 0;
+        int temp = 0;
+
+        for (int i = 0; i < op1Len; i++) {
+            carry = 0;
+
+            for (int k = 0; k < op2Len; k++) {
+                temp = ((result[i + k] > 0) ? result[i + k] : 0) + op1Num[i] * op2Num[k] + carry;
+
+                if (temp > 9) {
+                    carry = temp / 10;
+                    result[i + k] = temp % 10;
+                } else {
+                    carry = 0;
+                    result[i + k] = temp;
+                }
+
+                //log.debug("{} x {} = {}, carry {}", op1Num[i], op2Num[k], temp, carry);
+            }
+
+            if (carry > 0) {
+                result[i + op2Len] = carry;
+            }
+
+            //log.debug("{} : {}", i, int2str(result));
+        }
+
+        List<String> ret = new ArrayList<>();
+
+        for (int i = 0; i < op1Len + op2Len; i++) {
+            if (result[i] == -1) {
+                break;
+            }
+
+            ret.add("" + result[i]);
+        }
+
+        Collections.reverse(ret);
+
+        StringBuilder buf = new StringBuilder();
+
+        for(String ch : ret) {
+            buf.append(ch);
+        }
+
+        return buf.toString();
+    }
+
+    private String int2str(int[] source) {
+        if (source == null || source.length == 0) {
+            return "[]";
+        }
+
+        StringBuilder buf = new StringBuilder();
+
+        int len = source.length;
+
+        buf.append("[");
+        for (int i = 0; i < len; i++) {
+            buf.append(source[i]);
+        }
+        buf.append("]");
+
+        return buf.toString();
     }
 
 
