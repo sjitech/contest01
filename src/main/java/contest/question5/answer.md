@@ -1,5 +1,7 @@
 # 概要
-オープンソースの[C3P0](http://www.mchange.com/projects/c3p0/)とApacheの[Commons-DBCP](http://commons.apache.org/proper/commons-dbcp/)は一番良い参考プロジェクトです｡
+オープンソースの[C3P0](http://www.mchange.com/projects/c3p0/)とApacheの[Commons-DBCP](http://commons.apache.org/proper/commons-dbcp/)は一番良い参考プロジェクトと思う｡
+
+基本機能はメモリ上に予めDB接続を用意し､クライアントにその接続を貸して､接続の状態管理をします｡
 
 ## 要件
 
@@ -10,4 +12,25 @@
 
 ## 機能
 
+* クラアンと向けのインタフェース
+    * borrowConncetion()
+    * releaseConnection()
+* システム向けのインタフェース
+    * setup()
+    * shutdown()
+* 内部機能
+    * 設定ファイルの読み込み､解析
+        * XMLまたはYAMLの設定ファイル
+        * JavaではAnnotation､Groovy形式の設定もいい
+    * 設定によるDB接続のFactory
+    * 接続プール保持のコンテナ(Sington)の初期化
+    * 監視スレッドの起動
+    * 接続エラー処理
+    * 接続プールの統計､監視
+    * 接続オブジェクトごとの監視､管理
+    * コンテナのDestroy
+* 高度な機能
+    * 複数種類のデータベースの対応
+    * 分散トランザクション
+    * 大規模データベースの対応(Partitionの場合)
 
