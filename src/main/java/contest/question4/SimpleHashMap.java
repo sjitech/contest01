@@ -12,6 +12,7 @@ import java.util.Objects;
  *
  * Created by wang on 2015/04/17.
  */
+@SuppressWarnings("unchecked")
 public class SimpleHashMap<K, V> {
 
     static class Node<K, V> {
