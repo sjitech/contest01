@@ -68,8 +68,7 @@
         * 実行結果のキャッシュ
         * 外部キャッシュサービス連携（memcache、redis、AWSのElastic Cacheなど）
 
-## アーキテクチャ
+## アーキテクチャ(Javaの例)
 ![Architecture Concept Diagram](arch_sample.jpg)
 
-## 実現
 
