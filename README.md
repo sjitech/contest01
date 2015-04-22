@@ -1,2 +1,17 @@
-# contest01
-Programming contest model answers
+# 第一回の社内プログラミングコンテスト
+コンテストの模範解答のJavaプロジェクトです｡
+
+## 利用方法
+[Gradle](http://www.gradle.org)を使用します｡Eclipseでは､gradleのpluginをインストールし､gradleプロジェクトをインポートします｡
+
+Ideaなら､gradleを既にサポートしますので､gradleプロジェクトをインポートします｡
+
+核問題の確認はgradleでJunitコードを実行してください｡
+
+問題5はMarkDownのファイルで解答します｡
+
+## 注意事項
+すべての解答はプログラミング勉強の参考用です｡
+
+当プロジェクトの利用によって生じたあらゆる損害に対して、一切の責任を負いません。
+
