@@ -11,22 +11,11 @@ public class Answer3 {
     protected static Logger log = LoggerFactory.getLogger(Answer3.class);
 
     /**
-     * 一公里一公里的向前移动
-     * 在3000 – 2000 时，每向前一公里，需要来回移动5次，故在这个时段每公里耗费5吨煤
-     * 在2000 – 1000 时，每向前一公里，需要来回移动3次，每公里耗费3吨煤
-     * 在1000 – 0 时，每公里1吨煤
-     * 所以结果如下：
-     * 剩下的煤 已经走了的公里数
-     * 3000 : 0
-     * 2000 : (1000/5) = 200
-     * 1001 : 200 + (1000/3) = 533
-     * 最后在走了533公里的时候，火车上还可以有1001吨，但是零下的一吨是带不走的
-     * 所以最后应该是 1000吨 – （1000公里 – 533公里）* 1吨每公里 = 533吨
      *
      * @param coal
      * @param capacity
      * @param distance
-     * @return
+     * @return 最大運送できる石炭量
      */
     public int resolve(int coal, int capacity, int distance) {
         int milesLeft = distance;
