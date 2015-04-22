@@ -6,7 +6,7 @@
 
 Ideaなら､gradleを既にサポートしますので､gradleプロジェクトをインポートします｡
 
-核問題の確認はgradleでJunitコードを実行してください｡
+各問題の確認はgradleでJunitコードを実行してください｡
 
 問題5はMarkDownのファイルで解答します｡
 
