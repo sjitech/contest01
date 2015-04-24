@@ -1,7 +1,7 @@
 # 第一回の社内プログラミングコンテスト
 コンテストの模範解答のJavaプロジェクトです｡
 
-問題と解答説明は![コンテストまとめ](summary.pptx)を参考してください｡
+問題と解答説明は**summary.pptx**を参考してください｡
 
 ## 利用方法
 [Gradle](http://www.gradle.org)を使用します｡Eclipseでは､gradleのpluginをインストールし､gradleプロジェクトをインポートします｡
